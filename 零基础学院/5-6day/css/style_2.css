@@ -13,6 +13,24 @@ p{word-wrap:break-word}*/
 body{
 	font-weight: bold;
 	font-family: Arial,sans-serif;
+	padding:0;
+	margin:0;
+}
+.tab{
+	width: 306px;
+	height: 52px;
+}
+.tab1,.tab2,.tab3{
+	width: 100px;
+	height: 50px;
+	float:left;
+	background-color: #e0e698;
+	text-align: center;
+	line-height: 50px;
+	border:1px solid #000;
+}
+.tab1:hover,.tab2:hover,.tab3:hover{
+	background-color: #aca675;
 }
 .sec1 .sec1_detail,
 .sec2 .sec2_detail{
@@ -36,11 +54,6 @@ body{
 }
 
 /*css style_2.css add*/
-body{
-	padding:0;
-	margin:0;
-	font-family: Arial,sans-serif;
-}
 .caption{
 	text-align: center;
 	float: left;
@@ -48,8 +61,8 @@ body{
 	height: 740px;
 	background-color: #4c95f0;
 	margin-right: 20px;
-	/*position: absolute;*/
-	/*top:0;*/
+	/*position: absolute;
+	top:52px;*/
 }
 .caption h1{
 	color:#fff;

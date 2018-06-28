@@ -2,13 +2,18 @@
 <html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
-	<title>简历一</title>
+	<title>简历</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- <link rel="stylesheet" href="css/style_1.css"> -->
-	<link rel="stylesheet" href="css/style_2.css">
-	<!-- <link rel="stylesheet" href="css/style_3.css"> -->
+	<link rel="stylesheet" href="css/style_1.css">
+	<!-- <link rel="stylesheet" href="css/style_2.css"> -->
+	<!-- <link rel="stylesheet" href="css/style_3.css" -->
 </head>
 <body>
+	<div class="tab" id="tab">
+		<div class="tab1">简历一</div>
+		<div class="tab2">简历二</div>
+		<div class="tab3">简历三</div>
+	</div>
 	<div class="caption">
 		<h1>简历</h1>
 	</div>
@@ -51,5 +56,31 @@
 			</div>
 		</section>
 	</div>
+	<script>
+		var tabs = document.getElementById('tab');
+		var tab = tabs.getElementsByTagName('div');
+		var addCss = function(path){
+		    if(!path || path.length === 0){
+		        throw new Error('argument "path" is required !');
+		    }
+		    var head = document.getElementsByTagName('head')[0];
+		    var li = head.getElementsByTagName('link')[0];
+		    head.removeChild(li);
+		    var link = document.createElement('link');
+		    link.href = path;
+		    link.rel = 'stylesheet';
+		    link.type = 'text/css';
+		    head.appendChild(link);
+		};
+		tab[0].onclick = function(){
+			addCss('css/style_1.css');
+		}
+		tab[1].onclick = function(){
+			addCss('css/style_2.css');
+		}
+		tab[2].onclick = function(){
+			addCss('css/style_3.css');
+		}
+	</script>
 </body>
 </html>

@@ -14,6 +14,30 @@ body{
 	font-weight: bold;
 	font-family: Arial,sans-serif;
 }
+body{
+	padding:0;
+	margin:0;
+	font-family: Arial,sans-serif;
+}
+.tab{
+	width: 306px;
+	height: 52px;
+}
+.tab1,.tab2,.tab3{
+	width: 100px;
+	height: 50px;
+	float:left;
+	background-color: #e0e698;
+	text-align: center;
+	line-height: 50px;
+	border:1px solid #000;
+}
+.tab1:hover,.tab2:hover,.tab3:hover{
+	background-color: #aca675;
+}
+.caption,.allsec{
+	margin-left:20px;
+}
 .sec1 .sec1_detail,
 .sec2 .sec2_detail{
 	overflow: hidden;
@@ -34,5 +58,6 @@ body{
 .sec2 .sec2_detail p a{
 	color:blue;
 }
+
 /*css body end*/
 
