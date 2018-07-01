@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>左定右auto</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body{
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+		.left{
+			width:200px;
+			height:100%;
+			background-color:#AAB8A3;
+			float: left;
+		}
+		.right{
+
+			/*方法一
+			width:calc(100% - 200px);
+			float:right;
+			*/
+
+			/*方法二 在父级加上overflow:hidden;
+			width:100%;
+			margin-left:200px;*/
+			
+			/*现在是障眼法*/
+			height:100%;
+			background-color:#FF5983;
+		}
+	</style>
+</head>
+<body>
+	<div class="left"></div>
+	<div class="right"></div>
+</body>
+</html>

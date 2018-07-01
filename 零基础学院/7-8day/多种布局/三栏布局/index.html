@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>三栏布局1.0</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body,.main{
+			height:100%;
+			width:100%;
+		}
+		/*方法一：动态计算+float
+		.main > div{
+			float:left;
+			height: 100%;
+		}
+		.main .left,
+		.main .right{
+			width: 200px;
+			background-color: #ddd;
+		}
+		.main .middle{
+			width:calc(100% - 400px);
+			background-color:#FF5983;
+		}*/
+		/*方法二：左右浮动+margin（中间元素必须在左右元素的后面）*/
+		.main > div{
+			height: 100%;
+		}
+		.main .left,
+		.main .right{
+			width: 200px;
+			background-color: #ddd;
+		}
+		.main .middle{
+			margin:0 200px;
+			background-color:#FF5983;
+		}
+		.main .left{
+			float: left;
+		}
+		.main .right{
+			float:right;
+		}
+
+		/*方法三：position+margin
+		.main > div{
+			height: 100%;
+		}
+		.main .left,
+		.main .right{
+			width: 200px;
+			background-color: #ddd;
+			position: absolute;
+			top:0;
+		}
+		.main .middle{
+			margin:0 200px;
+			background-color:#FF5983;
+		}
+		.main .left{
+			left:0;
+		}
+		.main .right{
+			right:0;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="middle"></div>
+	</div>
+</body>
+</html>

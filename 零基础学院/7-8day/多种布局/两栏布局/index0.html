@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>左30%右70%</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.left{
+			width: 30%;
+			height: 100%;
+			background-color: #E03636;
+			/*1、float: left;*/
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.right{
+			width: 70%;
+			height: 100%;
+			background-color: #EDD0BE;
+			/*1、float: right;*/
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="left"></div>
+	<div class="right"></div>
+</body>
+</html>
