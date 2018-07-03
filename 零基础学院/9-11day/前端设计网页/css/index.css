@@ -1,0 +1,85 @@
+/*css reset start*/
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
+a{color:#2d374b;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+/*css reset end*/
+/*css header start*/
+header{
+	height: 120vh;
+	width: 100%;
+	background:url(../img/bg.png);
+	overflow: hidden;
+}
+header > p:first-child{
+	font-family: "Montserrat";
+	font-size: 62px;
+	color:#fff;
+	text-align: center;
+	margin-top: 200px;
+}
+header > p:nth-child(2){
+	color:#615f59;
+	font-size: 20px;
+  	font-family: "Montserrat";
+  	text-align: center;
+  	width: 770px;
+  	margin:75px auto 100px;
+  	line-height: 1.6;
+}
+header .signup{
+	width: 970px;
+	height: 250px;
+	text-align: center;
+	margin:0 auto;
+	border-top: 1px solid #585651;
+	border-bottom: 1px solid #585651;
+}
+header .signup p:first-child{
+	font-size: 16px;
+  	font-family: "Montserrat";
+  	color:#fff;
+  	line-height: 1.75;
+  	margin-top: 55px;
+	text-transform: uppercase;
+}
+header .signup p:nth-child(2){
+	font-size: 12px;
+	font-family: "Montserrat";
+	color: rgba( 255, 255, 255, 0.302 );
+	text-transform: uppercase;
+	margin-top: 5px;
+}
+header .signup input[type="text"]{
+	border:1px solid rgba( 255, 255, 255, 0.2);
+	border-radius: 2px;
+	width: 280px;
+  	height: 50px;
+  	background-color: transparent;
+  	margin-top: 40px;
+  	padding-left: 10px;
+  	color: #fff;
+}
+header .signup input[type="text"]::-webkit-input-placeholder{
+	color:#fff;
+	opacity: 1;
+}
+header .signup input:nth-child(4){
+ 	margin-left: 20px;
+ 	margin-right: 20px;
+}
+header .signup input[type="button"]{
+ 	width: 125px;
+ 	font-family: "Montserrat";
+ 	height: 50px;
+ 	color: #000;
+ 	font-size: 12px;
+ 	margin-top: 40px;
+}
+
+/*css header end*/
