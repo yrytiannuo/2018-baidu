@@ -15,9 +15,9 @@ header{
 	width: 100%;
 	background:url(../img/bg.png);
 	overflow: hidden;
+	font-family: "Montserrat";
 }
 header > p:first-child{
-	font-family: "Montserrat";
 	font-size: 62px;
 	color:#fff;
 	text-align: center;
@@ -26,7 +26,6 @@ header > p:first-child{
 header > p:nth-child(2){
 	color:#615f59;
 	font-size: 20px;
-  	font-family: "Montserrat";
   	text-align: center;
   	width: 770px;
   	margin:75px auto 100px;
@@ -42,7 +41,6 @@ header .signup{
 }
 header .signup p:first-child{
 	font-size: 16px;
-  	font-family: "Montserrat";
   	color:#fff;
   	line-height: 1.75;
   	margin-top: 55px;
@@ -50,7 +48,6 @@ header .signup p:first-child{
 }
 header .signup p:nth-child(2){
 	font-size: 12px;
-	font-family: "Montserrat";
 	color: rgba( 255, 255, 255, 0.302 );
 	text-transform: uppercase;
 	margin-top: 5px;
@@ -75,11 +72,79 @@ header .signup input:nth-child(4){
 }
 header .signup input[type="button"]{
  	width: 125px;
- 	font-family: "Montserrat";
  	height: 50px;
  	color: #000;
  	font-size: 12px;
  	margin-top: 40px;
 }
-
 /*css header end*/
+/*sec1 css start*/
+.sec1{
+	width: 100%;
+	height: 700px;
+	background-color: #fff;  
+	font-family: "Montserrat";
+}
+.sec1 > p:first-child{
+  font-size: 14px;
+  color: rgb(20, 20, 20);
+  text-transform: uppercase;s
+  line-height: 2;
+  text-align: center;
+  margin-top: 85px;
+}
+.sec1 > p:nth-child(2){
+  font-size: 42px;
+  color: rgb(20, 20, 20);
+  line-height: 1.238;
+  text-align: center;
+  margin-top:30px;
+}
+.sec1 .icons{
+	width: 1030px;
+	margin:0 auto;
+	margin-top:80px;
+}
+.sec1 .icons .icon{
+	width: 430px;
+	height: 125px;
+}
+.sec1 .icons .icon img{
+	float: left;
+}
+.sec1 .icons .icon h6{
+	width: 360px;
+	float: right;
+	font-size: 20px;
+  	color: rgb(20, 20, 20);
+  	line-height: 1.6;
+  	margin-top:-6px;
+  	margin-bottom: 20px;
+}
+.sec1 .icons .icon p{
+	width: 360px;
+	float: right;
+	font-size: 16px;
+	color: rgba(20, 20, 20, 0.702);
+	line-height: 1.625;
+}
+.sec1 .icon:nth-child(1),
+.sec1 .icon:nth-child(3){
+	float: left;
+}
+.sec1 .icon:nth-child(2),
+.sec1 .icon:nth-child(4){
+	float: right;
+}
+.sec1 .icon:nth-child(3),
+.sec1 .icon:nth-child(4){
+	margin-top: 60px;
+}
+/*sec1 css end*/
+/*sec2 css start*/
+.sec2{
+	width: 100%;
+	height: 200px;
+	background-color:red;
+}
+/*sec2 css end*/
