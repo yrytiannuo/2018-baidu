@@ -1,0 +1,209 @@
+/*css reset start*/
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
+a{color:#2d374b;text-decoration:none;color: rgba(255, 255, 255, 0.302);;}
+a:hover{color:#cd0200;}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+/*css reset end*/
+body{
+	display: flex;
+	align-items: flex-start;
+}
+/*aside css start*/
+body aside {
+    flex: 0 0 auto;
+    width: 350px;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+}
+.sidetools{
+	width: 100px;
+	height: 100vh;
+	background-color: #1d2531;
+	flex-direction: column;
+	position: relative;
+}
+.sidetools .toolstop > div{
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	margin:0 auto;
+	text-align: center;
+	line-height: 60px;
+	margin-top: 20px;
+}
+.sidetools .toolstop .toolsicon1{
+	background-color: #269bf3;
+}
+.sidetools .toolstop .toolsicon2{
+	background-color: #8b70e5;
+}
+.sidetools .toolstop .toolsicon3{
+	background-color: #ef4e32;
+}
+.sidetools .toolstop .toolsicon4{
+	border:2px solid #2d3848;
+}
+.sidetools .toolsbottom{
+	position: absolute;
+	bottom: 2vh;
+	width: 100%;
+	text-align: center;
+}
+.sidetools .toolsbottom img:first-child{
+	margin-right: 5px;
+}
+.sidetools .toolsbottom img:last-child{
+	margin-left: 5px;
+}
+nav{
+	width: 250px;
+	height: 100vh;
+	background-color: #222c3c;
+	flex-direction: column;
+	position: relative;
+}
+aside nav ul{
+	width: 195px;
+	margin-left:25px;
+	overflow: hidden;
+    box-sizing: border-box;
+    padding-bottom: 2vh;
+}
+aside nav ul:nth-child(1),ul:nth-child(2){
+	border-bottom: 1px solid #2a3547;
+}
+aside nav a{
+	font-size: 1.4vh;
+	font-family: "ProximaNova";
+	color: rgb(183, 192, 205);
+	line-height: 2.571;
+}
+aside nav li:first-child a{
+	font-size: 1.2vh;
+	font-family: "ProximaNova";
+	color: rgb(91, 103, 121);
+	text-transform: uppercase;
+	line-height: 3.333;
+}
+aside nav li:first-child i{
+	float: right;
+    line-height: 39px;
+}
+aside nav li:first-child{
+	margin-top:1.81vh;
+}
+aside nav ul span{
+	display: inline-block;
+    height: 2.9vh;
+    width: 3.4vh;
+    background-color: #1e95ee;
+    border-radius:40%;
+    float:right;
+    margin-top: 0.35vh;
+    line-height: 2.9vh;
+    text-align: center;
+    font-family: "ProximaNova";
+    color: #fff;
+    font-size: 1.4vh;
+}
+aside nav .warning{
+	display: inline-block;
+	width: 2.9vh;
+	width: 2.9vh;
+	line-height: 2.9vh;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #ea492d;
+	float: right;
+	margin-top: 0.35vh;
+}
+aside nav p{
+	width: 100%;
+    text-align: center;
+	position: absolute;
+	bottom: 4vh;
+	color: #fff;
+	font-family: "ProximaNova";
+	margin:0 auto;
+}
+aside .line{
+	height: 0.6vh;
+	width: 180px;
+	position: absolute;
+	bottom: 2vh;
+	background-color: #2d3848;
+	margin-left:37px;
+	border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+
+}
+aside .subline{
+	height: 0.6vh;
+	width: 80px;
+	background-color: #8d73e4;
+	border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    background: -webkit-linear-gradient(left,#7757d6 ,#9287d4);
+}
+.sub {
+    flex: 1 1 auto;
+  /*  overflow-y:auto;*/
+    margin-left: 350px;
+}
+.sub_header{
+	height: 80px;
+	border-bottom: 2px solid #e6e9ec;
+}
+.personal{
+	float:right;
+	width: 205px;
+	height: 80px;
+	display: flex;
+	align-items: flex-start;
+	margin-right: 30px;
+}
+.perimg{
+	flex-direction: column;
+	margin-top: 17px;
+	margin-right: 15px;
+}
+.personal p span{
+  font-size: 14px;
+  font-family: "ProximaNova";
+  color: rgb(181, 181, 181);
+  line-height: 1.2;
+  display: block;
+  margin-top: 10px;
+}
+
+.sub_header h3{
+  font-size: 24px;
+  font-family: "ProximaNova";
+  color: rgb(53, 64, 82);
+  line-height: 1.2;
+  margin:30px 0 0 30px;
+  display: inline-block;
+}
+.personal p{
+  font-size: 16px;
+  font-family: "ProximaNova";
+  color: rgb(35, 153, 241);
+  line-height: 1.2;
+  text-align: left;
+  margin-top:20px;
+}
+.personal > img{
+	margin-top: 35px;
+    margin-left: 40px;
+}
+
