@@ -158,6 +158,7 @@ aside .subline{
 .sub {
     flex: 1 1 auto;
   /*  overflow-y:auto;*/
+  overflow-y:hidden;
     margin-left: 350px;
 }
 .sub_header{
@@ -197,13 +198,30 @@ aside .subline{
 .personal p{
   font-size: 16px;
   font-family: "ProximaNova";
-  color: rgb(35, 153, 241);
   line-height: 1.2;
   text-align: left;
-  margin-top:20px;
+  color: #4fadf4;
+  margin-top:17px;
 }
 .personal > img{
 	margin-top: 35px;
     margin-left: 40px;
+}
+.sub_content{
+	display: flex;
+	align-items: flex-start;
+}
+.sub_aside{
+	width: 400px;
+	height: 500px;
+	background-color: red;
+	overflow-y:hidden;
+	flex:0 0 auto;
+}
+.sub_message{
+	height: 500px;
+	background-color: blue;
+	flex:1 1 auto;
+	overflow-y:hidden;
 }
 
