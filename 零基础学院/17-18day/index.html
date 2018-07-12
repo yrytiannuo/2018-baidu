@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <button id="change-btn">转化第一个输入框</button>
+    <p id="result">运算结果</p>
+    <script>
+        var add = document.getElementById('add-btn');
+        var minus = document.getElementById('minus-btn');
+        var times = document.getElementById('times-btn');
+        var divide = document.getElementById('divide-btn');
+        var change = document.getElementById('change-btn');
+        var number1,number2;
+        //加
+        add.onclick = function(){
+            number1 = document.getElementById('first-number').value;
+            number2 = document.getElementById('second-number').value;
+            if(!isNaN(number1)&&!isNaN(number2)){
+                document.getElementById('result').innerHTML = parseInt(number1) + parseInt(number2);
+            }else{
+                console.log('输入包含不是数字！请重新输入')
+            }
+        }
+        //减
+        minus.onclick = function(){
+            number1 = document.getElementById('first-number').value;
+            number2 = document.getElementById('second-number').value;
+            if(!isNaN(number1)&&!isNaN(number2)){
+                document.getElementById('result').innerHTML = parseInt(number1) - parseInt(number2);
+            }else{
+                console.log('输入包含不是数字！请重新输入')
+            }
+        }
+        //乘
+        times.onclick = function(){
+            number1 = document.getElementById('first-number').value;
+            number2 = document.getElementById('second-number').value;
+            if(!isNaN(number1)&&!isNaN(number2)){
+                document.getElementById('result').innerHTML = parseInt(number1) * parseInt(number2);
+            }else{
+                console.log('输入包含不是数字！请重新输入')
+            }
+        }
+        //除
+        divide.onclick = function(){
+            number1 = document.getElementById('first-number').value;
+            number2 = document.getElementById('second-number').value;
+            document.getElementById('result').innerHTML = parseInt(number1) / parseInt(number2);
+            if(!isNaN(number1)&&!isNaN(number2)&&parseInt(number2)!=0){
+                document.getElementById('result').innerHTML = parseInt(number1) - parseInt(number2);
+            }else{
+                console.log('输入有错')
+            }
+        }
+        //转化
+        function dec2bin(decNumber){
+            var arr = new Array();
+            var i = 0,string;
+            while(decNumber >= 1){
+                arr[i] = decNumber%2;
+                decNumber = decNumber/2;
+                i++;
+            }
+            // for(var j=i;j>=0;j--){
+            //     var str = arr[j].toString();
+            //     console.log(str);
+            //     string = string + str;
+            // }
+            string = arr.join("");
+            return string;
+        }
+        change.onclick = function(){
+            number1 = document.getElementById('first-number').value;
+            var change_number = dec2bin(parseInt(number1));
+            document.getElementById('result').innerHTML = change_number;
+        }
+    </script>
+</body>
+</html>
