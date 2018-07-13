@@ -2,18 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>IFE ECMAScript</title>
+    <title>三个小demo</title>
 </head>
 <body>
+    <h2>1、实现二进制问题</h2>
     <input id="first-number" type="number" value="0" placeholder="第一个数字">
     <input id="second-number" type="number" value="0" placeholder="第二个数字">
     <button id="add-btn">加</button>
     <button id="minus-btn">减</button>
     <button id="times-btn">乘</button>
     <button id="divide-btn">除</button>
-    <button id="change-btn">转化第一个输入框</button>
+    <button id="change-btn">转化第一个输入框,第二个框输入位数</button>
     <p id="result">运算结果</p>
     <script>
+        //二进制 start
         var add = document.getElementById('add-btn');
         var minus = document.getElementById('minus-btn');
         var times = document.getElementById('times-btn');
@@ -62,27 +64,36 @@
             }
         }
         //转化
-        function dec2bin(decNumber){
+        function dec2bin(decNumber,binbit){
             var arr = new Array();
             var i = 0,string;
-            while(decNumber >= 1){
-                arr[i] = decNumber%2;
-                decNumber = decNumber/2;
-                i++;
+            if(decNumber>=0){
+                while(decNumber >= 1){
+                    arr[i] = decNumber%2;
+                    decNumber = (decNumber-arr[i])/2;
+                    i++;
+                }
+                if(binbit>=i){
+                    for(var j=binbit-1;j>i-1;j--){
+                        arr[j]=0;
+                    }
+                }else{
+                    console.log('设置位数不够，系统已更正！');
+                }
+                string = arr.reverse().join("");
+            }else{
+                string = "输入有误！";
             }
-            // for(var j=i;j>=0;j--){
-            //     var str = arr[j].toString();
-            //     console.log(str);
-            //     string = string + str;
-            // }
-            string = arr.join("");
             return string;
         }
         change.onclick = function(){
             number1 = document.getElementById('first-number').value;
-            var change_number = dec2bin(parseInt(number1));
+            number2 = document.getElementById('second-number').value;
+            var change_number = dec2bin(parseInt(number1),parseInt(number2));
             document.getElementById('result').innerHTML = change_number;
         }
+        //二进制 end
+        //
     </script>
 </body>
 </html>
