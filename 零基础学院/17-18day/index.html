@@ -14,6 +14,13 @@
     <button id="divide-btn">除</button>
     <button id="change-btn">转化第一个输入框,第二个框输入位数</button>
     <p id="result">运算结果</p>
+    <h2>3的小游戏</h2>
+    <input class="second_game_number" type="number" value="0" placeholder="第一个数字"><button id="second_btn">结果</button>
+    <p class="second_game_result">运算结果</p>
+    <h2>九九乘法表</h2>
+    <table id="table" border="1">
+    </table>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script>
         //二进制 start
         var add = document.getElementById('add-btn');
@@ -93,7 +100,39 @@
             document.getElementById('result').innerHTML = change_number;
         }
         //二进制 end
-        //
+        //3的小游戏
+        var second_result = [];
+        var second_btn = document.getElementById('second_btn');
+        second_btn.onclick = function(){
+            var j=0;
+            var second_game_number = document.getElementsByClassName('second_game_number')[0].value;
+            if(parseInt(second_game_number)>=1){
+                for(var i=1;i<=parseInt(second_game_number);i++){
+                    if(i%3==0||String(i).indexOf("3")!=-1){
+                        second_result[j++] = "SPA";
+                     }else{
+                        second_result[j++] = i;
+                    }
+                }
+            }else{
+                second_result = "输入有误！";
+            }
+            document.getElementsByClassName('second_game_result')[0].innerHTML = second_result;
+        }
+        //九九乘法表
+        var $ele_tr = '<tr><tr>';
+        var $ele_td = '<td><td>';
+        for(var i=0;i<9;i++){
+            $('#table').append($ele_tr);
+            for(var j=0;j<=i;j++){
+                var k = i+1;
+                var m = j+1;
+                $('tr:nth-child('+ k +')').append($ele_td);
+                var string = k+"*"+m+"="+k*m;
+                $('td:nth-child('+ m +')').innerHTML = string;
+                console.log(string);
+            }
+        }
     </script>
 </body>
 </html>
