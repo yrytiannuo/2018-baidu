@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>三个小demo</title>
+    <style>
+        table td{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
 </head>
 <body>
     <h2>1、实现二进制问题</h2>
@@ -20,6 +26,8 @@
     <h2>九九乘法表</h2>
     <table id="table" border="1">
     </table>
+    <h2>问候语</h2>
+    <h3 class="forth_result"></h3>
     <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script>
         //二进制 start
@@ -120,19 +128,30 @@
             document.getElementsByClassName('second_game_result')[0].innerHTML = second_result;
         }
         //九九乘法表
-        var $ele_tr = '<tr><tr>';
-        var $ele_td = '<td><td>';
-        for(var i=0;i<9;i++){
+        var $ele_tr = '<tr></tr>';
+        var $ele_td = '<td></td>';
+        for(var i=1;i<=9;i++){
             $('#table').append($ele_tr);
-            for(var j=0;j<=i;j++){
-                var k = i+1;
-                var m = j+1;
-                $('tr:nth-child('+ k +')').append($ele_td);
-                var string = k+"*"+m+"="+k*m;
-                $('td:nth-child('+ m +')').innerHTML = string;
-                console.log(string);
+            var temp_i = i;
+            for(var j=1;j<=temp_i;j++){
+                $('tr:nth-child('+ temp_i +')').append($ele_td);
+                var string = j+"*"+temp_i+"="+temp_i*j;
+                $('tr:nth-child('+ temp_i +') td:nth-child('+ j +')').text(string);
             }
         }
+        //问候语
+        var date = new Date();
+        console.log(date);
+        var string_date,str;
+        string_date = "你好！现在是北京时间"+date.toLocaleDateString();
+        if(date.getHours() >=8 && date.getHours()<=12){
+            str = "早上好！";
+        }else if(date.getHours() >12 && date.getHours()<=17){
+            str = "中午好！";
+        }else{
+            str = "晚上好！";
+        }
+        document.getElementsByClassName('forth_result')[0].innerHTML = string_date+str;
     </script>
 </body>
 </html>
