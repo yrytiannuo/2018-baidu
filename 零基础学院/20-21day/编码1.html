@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>和页面对话编码一</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- 编码一 -->
+	<input id="name" type="text">
+	<button id="submit-btn">Submit</button>
+	<script>
+		//编码一
+		var first_name = document.getElementById('name');
+		var first_submit = document.getElementById('submit-btn');
+		function con(){
+			console.log(first_name.value);
+		}
+		first_submit.onclick = function(){
+			con();
+		}
+		first_name.onkeydown = function(){
+			if(event.keyCode == 13){
+				con();
+			}
+			if(event.keyCode == 27){
+				first_name.value="";
+			}
+		}
+	</script>
+</body>
+</html>
