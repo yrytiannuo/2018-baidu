@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>编码4</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+	<button id="fade-btn">淡出</button>
+	<script>
+		var obj = document.getElementById('fade-obj');
+		var btn = document.getElementById('fade-btn');
+		btn.onclick = function(){
+			setTimeout(obj.style.opacity = 0,999999999999999999999999999999999999999999999999999999999999999999999999999999);
+		}
+	</script>
+</body>
+</html>

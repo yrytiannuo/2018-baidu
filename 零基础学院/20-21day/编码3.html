@@ -32,6 +32,7 @@
     <p class="color-picker"></p>
 
     <script>
+        //普通方法
         // var list = document.querySelectorAll("li");
         // for (var i = i = 0, len = list.length; i < len; i++) {
         //     list[i].onclick = function(e) {
@@ -43,11 +44,15 @@
 
         //     }
         // }
+        //事件委托
         var ul = document.querySelectorAll("ul");
         ul[0].onclick = function(ev){
             var ev = ev || window.event;
 　　　　     var target = ev.target || ev.srcElement;
-            console.log(target);
+            console.log(target.style.backgroundColor);
+            var p = document.getElementsByClassName("color-picker")[0]
+                p.innerHTML = target.style.backgroundColor;
+                p.style.color = target.style.backgroundColor;
         }
     </script>
 </body>
