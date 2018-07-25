@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css Sprites</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#smile{
+			width: 500px;
+			height: 479px;
+			margin:30px auto 0;
+			background: url(img/smile.jpg);
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div id="smile"></div>
+	<script>
+		var smile = document.getElementById('smile');
+		var time = setInterval("smiles()",100);
+		var i=0,count=0;
+		var j=-481;
+		function smiles(){
+			count++;
+			if(count==16){
+				count=1;
+				j = -j;
+			}
+			i+=j;
+			smile.style.backgroundPosition=0+"px "+i+"px";
+		}
+	</script>
+</body>
+</html>
