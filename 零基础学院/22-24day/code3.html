@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>去空格</title>
+</head>
+<body>
+	<script>
+		/*
+		实现一个字符串头尾去除空格的函数
+		注意需要去除的空格，包括全角、半角空格
+		暂时不需要学习和使用正则表达式的方式
+		*/
+		function diyTrim(str) {
+		    var result = "";
+		    var before_blank=0,after_blank=0;
+		    for(var i=0;i<str.length;i++){
+		    	if(str[i] == " "||str[i] =="　"||str[i]=="	"){
+		    		before_blank++;
+		    	}else{
+		    		break;
+		    	}
+		    }
+		    for(var i=str.length-1;i>=0;i--){
+		    	if(str[i] == " "||str[i] =="　"||str[i]=="	"){
+		    		after_blank++;
+		    	}else{
+		    		break;
+		    	}
+		    }
+		    result = str.slice(before_blank,str.length-after_blank);
+		    return result;
+		}
+
+		// 测试用例
+		console.log(diyTrim(' a f b    ')); // ->a f b
+		console.log(diyTrim('    ffdaf    ')); // ->ffdaf
+		console.log(diyTrim('1    ')); // ->1
+		console.log(diyTrim('　	f')); // ->f
+		console.log(diyTrim('  　  a f b 　　 ')); // ->a f b
+		console.log(diyTrim(' ')); // ->
+		console.log(diyTrim('　')); // ->
+		console.log(diyTrim('')); // ->
+
+		/*
+		去掉字符串str中，连续重复的地方
+		*/
+		function removeRepetition(str) {
+		    for(var i=1;i<str.length;i++){
+		    	if(str[i] == str[i-1]){
+		    		str = str.substr(0,i-1) + " " + str.substr(i,str.length);
+		    	}
+		    }
+		    var result = str.split(" ").join("");
+		    return result;
+		}
+		// 测试用例
+		console.log(removeRepetition("aaa")); // ->a
+		console.log(removeRepetition("abbba")); // ->aba
+		console.log(removeRepetition("aabbaabb")); // ->abab
+		console.log(removeRepetition("")); // ->
+		console.log(removeRepetition("abc")); // ->abc
+	</script>
+</body>
+</html>
