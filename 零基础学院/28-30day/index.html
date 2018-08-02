@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>键盘输入</title>
+	<style>
+		ul{
+			border:1px solid #000;
+			height: 120px;
+			width: 149px;
+			margin:0;
+			padding: 0;
+		}
+		ul li{
+			list-style: none;
+			width: 139px;
+			height: 23px;
+			border-bottom: 1px solid #000;
+			padding-left: 10px;
+		}
+		ul li:hover{
+			background-color: #888888;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+	    <input id="email-input" type="text">
+	    <ul id="email-sug-wrapper" class="email-sug"></ul>
+	</div>
+	<script>
+		var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+		var input = document.getElementById('email-input');
+		var ul = document.getElementById('email-sug-wrapper');
+		input.onkeyup = function() {
+			add_prompt();
+			is_show();
+		}
+
+		function get_input() {
+		    return input.value.trim();
+		}
+
+		function create_prompt() {
+		    var prompt = get_input();
+		    var li = new Array;
+		    var arr = new Array;
+		    var l_prompt;var r_prompt = prompt;
+		    if(prompt.indexOf("@")!=-1){
+		    	r_prompt = prompt.substring(0,prompt.indexOf("@"));
+		    	l_prompt = prompt.substring(prompt.indexOf("@"));
+		    }
+		    for(var i=0;i<postfixList.length;i++){
+		    	if(typeof l_prompt != "undefined"){
+		    		if(postfixList[i].indexOf(l_prompt.substring(1)) == 0){
+		    			arr[i] = "<li>"+ r_prompt + "@" +postfixList[i] +"</li>";
+		    		}else{
+		    			li[i] = "<li>"+ r_prompt + "@" +postfixList[i] +"</li>";
+		    		}
+		    	}else{
+		    		li[i] = "<li>"+ r_prompt + "@" +postfixList[i] +"</li>";
+		    	}
+		    }
+		    if(arr.length!=0){
+		    	return arr;
+		    }
+		    return li;
+		}
+
+		function add_prompt() {
+		    var li = create_prompt();
+		    ul.innerHTML = null;
+		    for(var i=0;i<li.length;i++){
+		    	if(li[i]!=undefined){
+		    		ul.innerHTML += li[i];
+		    	}
+		    }
+		}
+
+		function is_show() {
+		    if (input.value.trim().length == 0) {
+		        hide();
+		    } else {
+		        show();
+		    }
+		}
+
+		function hide() {
+		    ul.style.display = "none";
+		}
+
+		function show() {
+		    ul.style.display = "block";
+		}
+		ul.addEventListener('click',function(e){
+			if(String(e.target).indexOf("LI")!=-1){
+				hide();
+				input.value = e.target.innerText;
+			}
+		});
+		is_show();
+	</script>
+</body>
+</html>
