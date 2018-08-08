@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>我是精明小卖家</title>
+	<style>
+		td,th{
+			border:1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="region-radio-wrapper"></div>
+	<div id="product-radio-wrapper"></div>
+	<input type="button" value="搜索" id="search">
+	<div>
+		<table id="table-wrapper"></table>
+	</div>
+	<!-- <script src="js/index.js"></script> -->
+	<script>
+		let sourceData = [{
+	    product: "手机",
+	    region: "华东",
+	    sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+	}, {
+	    product: "手机",
+	    region: "华北",
+	    sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+	}, {
+	    product: "手机",
+	    region: "华南",
+	    sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+	}, {
+	    product: "笔记本",
+	    region: "华东",
+	    sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+	}, {
+	    product: "笔记本",
+	    region: "华北",
+	    sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+	}, {
+	    product: "笔记本",
+	    region: "华南",
+	    sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+	}, {
+	    product: "智能音箱",
+	    region: "华东",
+	    sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+	}, {
+	    product: "智能音箱",
+	    region: "华北",
+	    sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+	}, {
+	    product: "智能音箱",
+	    region: "华南",
+	    sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+	}]
+	var table = document.getElementById("table-wrapper");
+	var region_radio = document.getElementById('region-radio-wrapper');
+	var product_radio = document.getElementById('product-radio-wrapper');
+	var search = document.getElementById('search');
+	search.onclick = function() {
+		create_data();
+	}
+	function create_checkBox(box,data){
+		box.innerHTML += "<label><input type='checkbox' value='0'>全选</label>";
+		for(var i in data){
+			box.innerHTML += "<label><input type='checkbox' value='"+ data[i].value +"'>"+ data[i].text +"</label>";
+		}
+		box.onclick = function(event){
+			var event = event || window.event;
+            var target = event.target || event.srcElement;
+            if(target.nodeName.toLowerCase() === 'label'){
+                target.style.background = 'red';
+            }
+		}
+	}
+	create_checkBox(region_radio, [{
+	    value: 1,
+	    text: "华北"
+	}, {
+	    value: 2,
+	    text: "华南"
+	}, {
+		value: 3,
+		text: "华东"
+	}]);
+	create_checkBox(product_radio, [{
+	    value: 1,
+	    text: "手机"
+	}, {
+	    value: 2,
+	    text: "笔记本"
+	}, {
+		value: 3,
+		text: "智能音箱"
+	}]);
+	function checkBox_data(){
+
+	}
+	function create_data(){
+		var newdata = [];
+		var j=0;
+		for(var i in sourceData){
+			if(sourceData[i].region == region&&sourceData[i].product == good){
+				newdata[j++] = sourceData[i];
+			}
+		}
+	    render_form(newdata);
+	}
+	function render_form(data) {
+		table.innerHTML = null;
+		var tr = [];
+	    tr[0] = "<tr><th>商品</th><th>地区</th><th>一月</th><th>二月</th><th>三月</th><th>四月</th><th>五月</th><th>六月</th><th>七月</th><th>八月</th><th>九月</th><th>十月</th><th>十一月</th><th>十二月</th></tr>";
+	    for(var i in data){
+	        tr[i+1] = "<tr><td>"+ data[i].product +"</td><td>"+ data[i].region +"</td><td>"+ data[i].sale[0] +"</td><td>"+ data[i].sale[1] +"</td><td>"+ data[i].sale[2] +"</td><td>"+ data[i].sale[3] +"</td><td>"+ data[i].sale[4] +"</td><td>"+ data[i].sale[5] +"</td><td>"+ data[i].sale[6] +"</td><td>"+ data[i].sale[7] +"</td><td>"+ data[i].sale[8] +"</td><td>"+ data[i].sale[9] +"</td><td>"+ data[i].sale[10] +"</td><td>"+ data[i].sale[11] +"</td></tr>";
+	    }
+	    for(var i in tr){
+	    	table.innerHTML += tr[i];
+	    }
+	}
+	</script>
+</body>
+</html>
