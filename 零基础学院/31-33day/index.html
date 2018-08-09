@@ -66,13 +66,37 @@
 	function create_checkBox(box,data){
 		box.innerHTML += "<label><input type='checkbox' value='0'>全选</label>";
 		for(var i in data){
-			box.innerHTML += "<label><input type='checkbox' value='"+ data[i].value +"'>"+ data[i].text +"</label>";
+			if(i==0){
+				box.innerHTML += "<label><input type='checkbox' checked='true' value='"+ data[i].value +"'>"+ data[i].text +"</label>";
+			}else{
+				box.innerHTML += "<label><input type='checkbox' value='"+ data[i].value +"'>"+ data[i].text +"</label>";
+			}
 		}
+
 		box.onclick = function(event){
 			var event = event || window.event;
             var target = event.target || event.srcElement;
-            if(target.nodeName.toLowerCase() === 'label'){
-                target.style.background = 'red';
+            if(target.nodeName.toLowerCase() == 'input'){
+                if(target.value==0){
+                	console.log(target.checked);
+                	var ele = target.parentNode.parentNode.children;
+                	if(target.checked){
+                		for(var i=0;i<ele.length;i++){
+                			temp = ele[i].children;
+                			console.log(temp);
+                		}
+                	}//else{
+                	// 	for(var i in ele){
+                	// 		if(i!=1){
+                	// 			ele[i].setAttribute('checked','flase');
+                	// 		}
+                	// 	}
+                	// }
+                	tt = target;
+                	console.log(target);
+                }else if(target.value>0){
+                	console.log(target.checked);
+                }
             }
 		}
 	}
@@ -99,27 +123,27 @@
 	function checkBox_data(){
 
 	}
-	function create_data(){
-		var newdata = [];
-		var j=0;
-		for(var i in sourceData){
-			if(sourceData[i].region == region&&sourceData[i].product == good){
-				newdata[j++] = sourceData[i];
-			}
-		}
-	    render_form(newdata);
-	}
-	function render_form(data) {
-		table.innerHTML = null;
-		var tr = [];
-	    tr[0] = "<tr><th>商品</th><th>地区</th><th>一月</th><th>二月</th><th>三月</th><th>四月</th><th>五月</th><th>六月</th><th>七月</th><th>八月</th><th>九月</th><th>十月</th><th>十一月</th><th>十二月</th></tr>";
-	    for(var i in data){
-	        tr[i+1] = "<tr><td>"+ data[i].product +"</td><td>"+ data[i].region +"</td><td>"+ data[i].sale[0] +"</td><td>"+ data[i].sale[1] +"</td><td>"+ data[i].sale[2] +"</td><td>"+ data[i].sale[3] +"</td><td>"+ data[i].sale[4] +"</td><td>"+ data[i].sale[5] +"</td><td>"+ data[i].sale[6] +"</td><td>"+ data[i].sale[7] +"</td><td>"+ data[i].sale[8] +"</td><td>"+ data[i].sale[9] +"</td><td>"+ data[i].sale[10] +"</td><td>"+ data[i].sale[11] +"</td></tr>";
-	    }
-	    for(var i in tr){
-	    	table.innerHTML += tr[i];
-	    }
-	}
+	// function create_data(){
+	// 	var newdata = [];
+	// 	var j=0;
+	// 	for(var i in sourceData){
+	// 		if(sourceData[i].region == region&&sourceData[i].product == good){
+	// 			newdata[j++] = sourceData[i];
+	// 		}
+	// 	}
+	//     render_form(newdata);
+	// }
+	// function render_form(data) {
+	// 	table.innerHTML = null;
+	// 	var tr = [];
+	//     tr[0] = "<tr><th>商品</th><th>地区</th><th>一月</th><th>二月</th><th>三月</th><th>四月</th><th>五月</th><th>六月</th><th>七月</th><th>八月</th><th>九月</th><th>十月</th><th>十一月</th><th>十二月</th></tr>";
+	//     for(var i in data){
+	//         tr[i+1] = "<tr><td>"+ data[i].product +"</td><td>"+ data[i].region +"</td><td>"+ data[i].sale[0] +"</td><td>"+ data[i].sale[1] +"</td><td>"+ data[i].sale[2] +"</td><td>"+ data[i].sale[3] +"</td><td>"+ data[i].sale[4] +"</td><td>"+ data[i].sale[5] +"</td><td>"+ data[i].sale[6] +"</td><td>"+ data[i].sale[7] +"</td><td>"+ data[i].sale[8] +"</td><td>"+ data[i].sale[9] +"</td><td>"+ data[i].sale[10] +"</td><td>"+ data[i].sale[11] +"</td></tr>";
+	//     }
+	//     for(var i in tr){
+	//     	table.innerHTML += tr[i];
+	//     }
+	// }
 	</script>
 </body>
 </html>

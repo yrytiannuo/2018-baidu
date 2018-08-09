@@ -1,4 +1,3 @@
-
 window.onload = function(){
 	let sourceData = [{
 	    product: "手机",
