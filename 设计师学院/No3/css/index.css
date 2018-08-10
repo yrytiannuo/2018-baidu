@@ -1,0 +1,169 @@
+			body {
+                background-color: #d69a44;
+            }
+            .container{
+            	overflow: hidden;
+			    width: 354px;
+			    height: 285px;
+			    margin: 10px auto 0;
+            }
+            .face{
+            	position: absolute;
+			    left: 50%;
+			    margin-left: -175px;
+			    top: 40px;
+			    width: 350px;
+			    height: 250px;
+			    border-radius: 50% 50% 30% 30%;
+			    border: 2px solid #3f200b;
+			    background: #fbf8f1;
+			    overflow: hidden;
+			    z-index: 1;
+            }
+            .hair{
+            	position: absolute;
+            	background-color: #f3b32e;
+            	width: 120px;
+            	height: 120px;
+            	right: 0;
+            	top: -35px;
+            	border-radius: 60% 60% 60% 70%;
+            }
+            .eye-wrap {
+			    position: absolute;
+			    width: 280px;
+			    height: 70px;
+			    top: 90px;
+			    left: 50%;
+			    margin-left: -140px;
+			    overflow: hidden;
+			}
+			.eye-wrap .eye{
+				height: 80px;
+				width: 100px;
+				border: 2px solid #3f200b;
+				border-radius: 50% 50% 40% 40%;
+				box-sizing: border-box;
+				position: relative;
+			}
+			.eye-wrap .left{
+				float: left;
+			}
+			.eye-wrap .right{
+				float: right;
+			}
+			.eye-wrap .eye .eye-circle{
+				height: 55px;
+			    width: 46px;
+			    border-radius: 50% 50% 50% 50%;
+			    background: #000;
+			    position: absolute;
+			    left: 50%;
+			    margin-left: -23px;
+			    transition: all 1s;
+			}
+			.eye-wrap .eye .eye-bottom{
+				height: 50px;
+			    width: 100px;
+			    border-radius: 40% 40% 50% 50%;
+			    position: absolute;
+			    margin-top: 48px;
+			    border-top: 2px solid #46240b;
+			    background: #f6f7f2;
+			    transition: all 1s;
+			}
+			.eye-wrap .eye .face-red{
+				position: absolute;
+			    height: 20px;
+			    width: 70px;
+			    background: red;
+			    top: 45px;
+			    left: 18px;
+			    border-radius: 50% 50% 50% 50%;
+			    background: #e85a5e;
+			    opacity: 0.0;
+			    transition: all 1s;
+			}
+			/*鼻子*/
+			.nose{
+				width: 20px;
+			    height: 10px;
+			    border-bottom: 8px solid #000;
+			    border-radius: 0% 0% 50% 50%;
+			    top: 165px;
+			    left: 50%;
+			    margin-left: -10px;
+			    position: absolute;
+			}
+			/*嘴巴*/
+			.mouth-wrap{
+				position: absolute;
+			    top: 182px;
+			    width: 90px;
+			    left: 50%;
+			    margin-left: -45px;
+			    height: 20px;
+			    overflow: hidden;
+			}
+			.mouth-wrap .mouth{
+				width: 45px;
+			    height: 20px;
+			    border-bottom: 4px solid #000;
+			    float: left;
+			    box-sizing: border-box;
+			    margin-top: -5px;
+			    transition: all 1s;
+			}
+			.mouth-wrap .left{
+			    border-right: 4px solid #000;
+			    border-radius: 0% 15% 100% 50%;
+			}
+			.mouth-wrap .right{
+			    border-left: 4px solid #000;
+			    border-radius: 0% 15% 50% 100%;
+			}
+			/*耳朵*/
+			.ear-wrap{
+				position: absolute;
+				width: 300px;
+				left:50%;
+				margin-left: -150px;
+			}
+			.ear-wrap .ear{
+				position: absolute;
+			    width: 80px;
+			    height: 100px;
+			    border: 2px solid #000;
+			    margin-top: 15px;
+			    transition: all 1s;
+			}
+			.ear-wrap .left{
+			    background: #fbf8f1;
+			    border-radius: 100% 10% 50% 0%;
+			}
+			.ear-wrap .right{
+			    right: 0;
+			    border-radius: 10% 100% 0% 50%;
+			    background: #f1ac2b;
+			}
+			.container:hover > .ear-wrap > .ear.left{
+				transform: rotate(-30deg);
+			}
+			.container:hover > .ear-wrap > .ear.right{
+				transform: rotate(30deg);
+			}
+			.container:hover > .face > .eye-wrap > .eye > .eye-circle{
+				height: 65px;
+			}
+			.container:hover > .face > .eye-wrap > .eye > .eye-bottom{
+				margin-top: 35px;
+			}
+			.container:hover > .face > .eye-wrap > .eye > .face-red{
+				opacity: 1;
+			}
+			.container:hover > .face > .mouth-wrap > .mouth.right{
+				border-radius: 0% 15% 100% 100%;
+			}
+			.container:hover > .face > .mouth-wrap > .mouth.left{
+				border-radius: 0% 15% 100% 100%;
+			}
