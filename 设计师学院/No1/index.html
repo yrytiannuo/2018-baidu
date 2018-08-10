@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>制作一个简单的菜单动画效果</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		p{
+			width: 100px;
+			border:2px solid #000;
+			margin:0 auto;
+			cursor: pointer;
+		}
+		#box{
+			transition: all .5s linear;
+		}
+		.show{
+			color:orange;
+		}
+		.line{
+			width: 100px;
+			margin:-15px auto 10px;
+			background-color: orange;
+			height:5px;
+			transition: width .5s linear;
+		}
+		.line_hide{
+			transition: width .5s linear;
+			margin:-15px auto 10px;
+			background-color: orange;
+			height:5px;
+			width: 0px;
+		}
+	</style>
+</head>
+<body>
+	<h2 class="hide" id="box">前端学院</h2>
+	<div class="line_hide" id="line"></div>
+	<p id="btn">切换样式</p>
+	<script>
+		var btn = document.getElementById('btn');
+		var box = document.getElementById('box');
+		var line = document.getElementById('line');
+		btn.addEventListener('click',function(){
+			if(box.classList.contains('hide')){
+				box.classList.add('show');
+				box.classList.remove('hide');
+				line.classList.add('line');
+				line.classList.remove('line_hide');
+			}else{
+				box.classList.add('hide');
+				box.classList.remove('show');
+				line.classList.remove('line');
+				line.classList.add('line_hide');
+			}
+		})
+	</script>
+</body>
+</html>
