@@ -1,0 +1,46 @@
+.cube{
+	width: 150px;
+	height: 150px;
+	margin:100px auto;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotateY(0deg) rotateX(0deg);
+	transition: all 6s;
+}
+.content{
+	width: 150px;
+	height: 150px;
+	opacity: 0.5;
+	position: absolute;
+	top:0;
+	left:0;
+	box-sizing: border-box;
+	border:2px solid #000;
+}
+.content1{
+	background-color: red;
+	transform: translateZ(75px);
+}
+.content2{
+	background-color: orange;
+	transform: translateZ(-75px);
+}
+.content3{
+	background-color: blue;
+	transform: rotateY(-90deg) translateZ(-75px);
+}
+.content4{
+	background-color: yellow;
+	transform: rotateY(-90deg) translateZ(75px);
+}
+.content5{
+	background-color: #000;
+	transform: rotateX(-90deg) translateZ(-75px);
+}
+.content6{
+	background-color: #ddd;
+	transform: rotateX(90deg) translateZ(75px);
+}
+.cube:hover{
+	transform: rotateY(229deg) rotateX(40deg);
+}
