@@ -6,36 +6,56 @@
 	<title>CSS 2D 变形</title>
 	<style>
 		.box{
-		  border-width: 2px;
-		  border-color: rgb(235, 235, 235);
-		  border-style: solid;
-		  background-color: rgb(247, 246, 246);
-		  margin-top: 27px;
-		  margin-left: 18px;
-		  width: 56px;
-		  height: 64px;
-		  float:left;
-		  line-height: 64px;
-		  text-align: center;
+			  border-width: 2px;
+			  border-color: rgb(235, 235, 235);
+			  border-style: solid;
+			  background-color: rgb(247, 246, 246);
+			  margin-top: 27px;
+			  margin-left: 18px;
+			  width: 56px;
+			  height: 64px;
+			  float:left;
+			  line-height: 64px;
+			  text-align: center;
 		}
 		.box1{
-          margin-left: 90px;
-		  transform: skew(30deg)
+             margin-left: 90px;
+		    -webkit-transform: skewX(30deg);
+            -moz-transform: skewX(30deg);
+            -ms-transform: skewX(30deg);
+            -o-transform: skewX(30deg);
+            transform: skewX(30deg);
 		}
 		.box2{
-			transform: scale(0.5,1);
+			-webkit-transform: scaleX(0.5);
+            -moz-transform: scaleX(0.5);
+            -ms-transform: scaleX(0.5);
+            -o-transform: scaleX(0.5);
+            transform: scaleX(0.5);
   			margin-left: 125px;
 		}
 		.box3{
-			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
  			margin-left: 57px;
 		}
 		.box4{
-			transform: translate(10px,20px);
+			-webkit-transform: translate(10px,20px);
+            -moz-transform: translate(10px,20px);
+            -ms-transform: translate(10px,20px);
+            -o-transform: translate(10px,20px);
+            transform: translate(10px,20px);
   			margin-left: 122px;
 		}
 		.box5{
-			transform: translate(10px,20px) rotate(45deg) skew(30deg) scale(0.5,1);
+			-webkit-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);
+            -moz-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);
+            -ms-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);
+            -o-transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);
+            transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px,20px);
 			left: 545px;
 			top: 49px;
 		}
