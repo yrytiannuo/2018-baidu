@@ -1,0 +1,61 @@
+*{
+	margin:0;
+	padding:0;
+}
+body,html{
+	height: 100%;
+	width: 100%;
+}
+.container{
+	width: 100%;
+	height: 100%;
+	background-color: yellow;
+}
+.conlist{
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	height: 100px;
+}
+.content{
+	position: absolute;
+}
+.con{
+	float:left;
+	width: 18%;
+	height: 100px;
+	transition: all 1s;
+	margin-left: 1.6%;
+}
+.con1{
+	background-color: orange;
+}
+.con1:active .content{
+	animation: con1 1s ease-out;
+}
+@keyframes con1{
+	0%{
+		background-color: orange;
+		width: 100%;
+		height: 100%;
+		left: -500px;
+	}
+	100%{
+		background-color: orange;
+		width: 100%;
+		height: 100%;
+		left: 0px;
+	}
+}
+.con2{
+	background-color: yellow;
+}
+.con3{
+	background-color: red;
+}
+.con4{
+	background-color: green;
+}
+.con5{
+	background-color: pink;
+}
