@@ -5,11 +5,11 @@
 body,html{
 	height: 100%;
 	width: 100%;
+	overflow:hidden;
 }
 .container{
 	width: 100%;
 	height: 100%;
-	background-color: yellow;
 }
 .conlist{
 	position: absolute;
@@ -19,43 +19,139 @@ body,html{
 }
 .content{
 	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+/*设置原本主部分的颜色*/
+.content1{
+	background-color: orange;
+}
+.content2{
+	background-color: yellow;
+}
+.content3{
+	background-color: red;
+}
+.content4{
+	background-color: green;
+}
+.content5{
+	background-color: pink;
+}
+.view{
+	display: none;
 }
 .con{
 	float:left;
 	width: 18%;
 	height: 100px;
-	transition: all 1s;
 	margin-left: 1.6%;
+	filter: brightness(0.8);
+	position: relative;
+	z-index: 10;
 }
+/*设置选项label的颜色*/
 .con1{
 	background-color: orange;
+}.con2{
+	background-color: yellow;
+}.con3{
+	background-color: red;
+}.con4{
+	background-color: green;
+}.con5{
+	background-color: pink;
 }
-.con1:active .content{
-	animation: con1 1s ease-out;
+.view:nth-child(1):checked ~ .content1{
+	animation: con1 .5s ease-out;
+	z-index: 4;
 }
+.view:nth-child(2):checked:checked ~ .content2{
+	animation: con2 .5s ease-out;
+	z-index: 4;
+}
+.view:nth-child(3):checked:checked ~ .content3{
+	animation: con3 .5s ease-in;
+	z-index: 4;
+}
+.view:nth-child(4):checked ~ .content4{
+	animation: con4 .5s ease-out;
+	z-index: 4;
+}
+.view:nth-child(5):checked ~ .content5{
+	-webkit-animation: con5 .5s ease-in-out;
+	-o-animation: con5 .5s ease-in-out;
+	animation: con5 .5s ease-in-out;
+	z-index: 4;
+}
+.view:not(:checked) ~ .content{
+	animation: is_check 0.5s linear;
+}
+/*不被选中时的动画*/
+@keyframes is_check{
+	0%{
+		z-index: 3;
+	}
+	100%{
+		z-index: 3;
+	}
+}
+/*当选中时的动画*/
 @keyframes con1{
 	0%{
 		background-color: orange;
-		width: 100%;
-		height: 100%;
 		left: -500px;
 	}
 	100%{
 		background-color: orange;
-		width: 100%;
-		height: 100%;
 		left: 0px;
 	}
 }
-.con2{
-	background-color: yellow;
+
+@keyframes con2{
+	0%{
+		background-color: yellow;
+		top:350px;
+	}
+	100%{
+		background-color: yellow;
+		top:0px;
+	}
 }
-.con3{
-	background-color: red;
+
+@keyframes con3{
+	0%{
+		background-color: red;
+		transform: scale(0.1);
+	}
+	100%{
+		background-color: red;
+		transform: scale(1);
+	}
 }
-.con4{
-	background-color: green;
+
+@keyframes con4{
+	0%{
+		background-color: green;
+		transform: scale(1);
+	}
+	100%{
+		background-color: green;
+		transform: scale(0.1);
+	}
 }
-.con5{
-	background-color: pink;
+
+@keyframes con5{
+	0%{
+		background-color: pink;
+		transform: scale(0.1) rotate(-360deg);
+	}
+	100%{
+		background-color: pink;
+		transform: scale(1) rotate(0deg);
+	}
+}
+label:hover{
+	filter: brightness(1);
 }
