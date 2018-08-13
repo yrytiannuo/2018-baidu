@@ -1,0 +1,82 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #eee;
+	width: 100%;
+	height: 100vh;
+}
+section{
+	width: 35%;
+	height: 350px;
+	background-color: #fff;
+	margin:40px auto 0;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24), 0 1px 18px 0 rgba(0,0,0,0.12);
+	overflow:hidden;
+}
+section h2{
+	margin:30px 0 30px 20px;
+}
+.inputs{
+	position: relative;
+}
+.inputs label{
+	display: block;
+	color: #999;
+	margin-left: 20px;
+	position: relative;
+	top:-40px;
+	font-size: 16px;
+}
+.inputs input{
+	width: 85%;
+	margin:10px 20px 0 20px;
+	border:none;
+	outline: 0;
+	border-bottom: 2px solid #ddd;
+	border-width: 100%;
+	height: 44px;
+}
+.inputs input[type=button]{
+	position: fixed;
+	bottom: 55px;
+	width: 30%;
+	box-shadow: 0 1px 3px 0 rgba(3,30,51,0.24), 0 1px 2px 0 rgba(3,30,51,0.12);
+	background-color: #2196f3;
+	height: 40px;
+	color:#fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+.inputs input[type=button]:hover{
+	background-color: #2196D4;
+}
+.inputs input:not([type=button]):focus + label{
+	animation:label .5s ease-in;
+	animation-fill-mode: forwards;
+}
+@keyframes label{
+	0%{
+		top:-40px;
+		font-size: 16px;
+	}
+	100%{
+		top:-55px;
+		font-size: 14px;
+	}
+}
+.inputs input:not([type=button]):focus{
+	animation: input .5s ease-in;
+	animation-fill-mode: forwards;
+}
+@keyframes input{
+	0%{
+		border-width:0px;
+		border-bottom: 2px solid #ddd;
+	}
+	100%{
+		border-width: 100%;
+		border-bottom: 2px solid #2196f3;
+	}
+}
